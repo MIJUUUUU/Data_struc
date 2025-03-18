@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+#define SIZE 5
+long iarray[SIZE];
+
+void store(int i, long item) {
+    iarray[i] = item;
+}
+
+int main() {
+    int i, n;
+    long item;
+
+    scanf("%d", &n);
+
+    scanf("%ld", &item);
+    store(0, item);
+    long max = item;  // 첫 번째 값으로 초기화
+
+    for (i = 1; i < n; i++) { // 1부터 시작
+        scanf("%ld", &item);
+        store(i, item);
+
+        if (max < item) {
+            max = item;
+        }
+    }
+
+    printf("%ld\n", max);
+
+    return 0;
+}
